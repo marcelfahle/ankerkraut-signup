@@ -1,0 +1,233 @@
+@import '~breakpoint-sass/stylesheets/breakpoint';
+
+
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/* FONTS */
+@font-face {
+	font-family: 'campton-extralight';
+	src: url('https://d2hjocz4h0f77r.cloudfront.net/lp/fonts/rene_bieder_-_campton_extralight-webfont.woff2') format('woff2'),
+		url('https://d2hjocz4h0f77r.cloudfront.net/lp/fonts/rene_bieder_-_campton_extralight-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'campton-medium';
+	src: url('https://d2hjocz4h0f77r.cloudfront.net/lp/fonts/rene_bieder_-_campton_medium-webfont.woff2') format('woff2'),
+		url('https://d2hjocz4h0f77r.cloudfront.net/lp/fonts/rene_bieder_-_campton_medium-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'campton-thin';
+	src: url('https://d2hjocz4h0f77r.cloudfront.net/lp/fonts/rene_bieder_-_campton_thin-webfont.woff2') format('woff2'),
+		url('https://d2hjocz4h0f77r.cloudfront.net/lp/fonts/rene_bieder_-_campton_thin-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'sohopro-regular';
+	src: url('https://d2hjocz4h0f77r.cloudfront.net/lp/fonts/SohoPro-Regular.woff2') format('woff2'),
+		url('https://d2hjocz4h0f77r.cloudfront.net/lp/fonts/SohoPro-Regular.woff') format('woff'),
+    url('https://d2hjocz4h0f77r.cloudfront.net/lp/fonts/SohoPro-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+
+
+/* LET'S GO! */
+body, html { width: 100%; height: 100%; }
+
+
+.signup-form__wrapper {
+  margin: 0 auto;
+  width: auto;
+  max-width: 850px;
+  height: auto;
+	background: black url('../images/signup-bg.jpg') no-repeat right top;
+  background-size: 950px auto;
+  @include breakpoint(640px) {
+    background-size: 105% auto;
+  }
+  @include breakpoint(740px) {
+    padding-bottom: 20px;
+  }
+  @include breakpoint(960px) {
+    max-height: 550px;
+    background-size: cover;
+  }
+  padding-top: 50px;
+}
+.signup-form__content {
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  width: 100%;
+  margin: 0 auto;
+  @include breakpoint(640px) {
+    width: auto;
+    margin-left: 240px;
+  }
+  @include breakpoint(960px) {
+    margin-left: 370px;
+    width: 450px;
+
+  }
+  h2 {
+    color: #000;
+    font-family: 'campton-extralight';	
+    letter-spacing: 3px;
+    font-size: 14px;
+    margin-bottom: 32px;
+    display: inline-block;
+    &:before, &:after {
+      content: " ";
+      display: inline-block;
+      height: 1px;
+      width: 35px;
+      background: #000;
+      top: -2px;
+      position: relative;
+      vertical-align: middle;
+    }
+    &:before {
+      margin-right: 20px;
+    }
+    &:after {
+      margin-left: 20px;
+    }
+  }
+  h1 {
+    font-family: 'sohopro-regular';
+    font-size: 30px;
+    line-height: 40px;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+    display: inline-block;
+    @include breakpoint(960px) {
+      margin-bottom: 40px;
+    }
+  }
+  h1 span {
+    color: #000;
+  }
+}
+
+.signup-form__form {
+  background: #fff;
+  margin: 0 auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  width: 100%;
+  @include breakpoint(640px) {
+    margin-left: -240px;
+    width: auto;
+  }
+  @include breakpoint(740px) {
+    width: 325px;
+    margin: 0 auto;
+  }
+  @include breakpoint(960px) {
+    margin-left: auto;
+    width: 325px;
+  }
+
+}
+.signup-form__email-field {
+  border: 1px solid black;
+  box-shadow: inset 3.8px 3.3px 5px rgba(0, 0, 0, 0.1);
+  width: 80%;
+
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 27px;
+  margin-bottom: 20px;
+  padding: 4px 4px;
+
+
+  @include breakpoint(960px) {
+    width: 300px;
+  }
+  color: #5d5d5d;
+  font-family: Arial, sans-serif;
+}
+.signup-form__submit-button {
+  border: none;
+  box-shadow: none;
+
+
+
+  display: inline-block;
+  font-family: 'campton-extralight';
+  font-size: 11px;
+  font-weight: 200;
+  line-height: 28px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #fff;
+  background: #fa5239;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 4px;
+}
+
+
+
+
